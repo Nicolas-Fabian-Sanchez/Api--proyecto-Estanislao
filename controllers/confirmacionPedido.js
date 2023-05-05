@@ -1,3 +1,5 @@
+const {cargarPedido}=require("../baseDatos/funcionesDB")
+
 //cragar el pedido db mesa ,mandar mensaje ingreso pedido
 
 const confirmacionPedido = (req,res)=>{
