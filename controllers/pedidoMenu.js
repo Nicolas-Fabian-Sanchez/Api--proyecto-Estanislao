@@ -13,12 +13,16 @@ const menu = [{ platoCaliente:["milanesa con papas","pizanezas","ravioles","bife
 //mandar el menu del resto ,guardar la mesa reservada y modificar base de datos mesa
 
 const pedidoMenu=async(req,res)=>{ // mando los datos de la mesa y envio el menu (para esto transformo los el array en dato json)
-       let mesa = req.body
-       console.log(mesa)//para ver la mesa recivida en consola ,no tiene funcion
+       const {mesa,pedido,totalPagar} = req.body;
+       let ingresarMesa = await cargaMesa({mesa:mesa,pedido:pedido,totalPagar:totalPagar});
+       console.log(ingresarMesa)//para ver la mesa recivida en consola ,no tiene funcion
        //let envioMenu = JSON.stringify(menu)//asi modifico el array en json para enviarlo
-       let envioMenu = await traerMenu;
-       res.send(envioMenu);
+       
+       res.redirect("/menuCompleto");
 }
 
-
-module.exports = {pedidoMenu} // para poder exportar el modulo
+const pedirMenu =async(req,res)=>{
+       let envioMenu = await traerMenu();
+       res.send(envioMenu)
+}
+module.exports = {pedidoMenu,pedirMenu} // para poder exportar el modulo

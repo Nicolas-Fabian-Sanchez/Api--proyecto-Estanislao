@@ -1,28 +1,29 @@
-const moldeMesas = require("./moldeInfo")
+const moldeMesas = require("./moldeInfo.js");
+const estanislao = require("./moldesEstanislao.js")
 
-
-const cargaMesa = async (mesa,descripcion,totalPagar) => {
-    let nuevaMesa = new moldeMesas({
+const cargaMesa = async (mesa,pedido,totalPagar) => {
+    const nuevaMesa = new moldeMesas({
         mesa:mesa,
-        pedido:descripcion,
+        pedido:pedido,
         totalPagar:totalPagar
     })
-    let resultado = await modelMesas.collection.insertOne(nuevaMesa)
+    console.log(nuevaMesa);
+    let resultado = await moldeMesas.collection.insertOne(nuevaMesa);//no carga las mesas uaaaaa!!!!
     return resultado
 };
 
 const traerMenu =async()=>{
-   let resultadoMenu = await menu.find();
+   let resultadoMenu = await estanislao.find();//error estanislao no esta definido
    return resultadoMenu
 };
 
 const cargarPedido = async(mesa,pedido)=>{
-    let nuevoPedido=await modelMesas.updateOne(mesa,{$set:pedido});
+    let nuevoPedido=await moldeMesas.updateOne(mesa,{$set:pedido});
     return nuevoPedido
 }
 
 const eliminarMesa = async(mesa)=>{
-    let mesaEliminada = await modelMesas.deleteOne(mesas);
+    let mesaEliminada = await moldeMesas.deleteOne(mesa);
     return mesaEliminada
 }
 
