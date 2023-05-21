@@ -21,10 +21,16 @@ const cargarPedido = async(mesa,pedido)=>{
     let nuevoPedido=await moldeMesas.updateOne(mesa,{$set:pedido});
     return nuevoPedido
 }
-
 const eliminarMesa = async(mesa)=>{
     let mesaEliminada = await moldeMesas.deleteOne(mesa);
     return mesaEliminada
 }
 
-module.exports={cargaMesa,traerMenu,cargarPedido,eliminarMesa}
+//-------- pide pedido para mostrar en el frond del servicio------//
+const traerPedido = async()=>{
+    let pedidos = await moldeMesas.find()
+    return pedidos
+}
+
+
+module.exports={cargaMesa,traerMenu,cargarPedido,eliminarMesa,traerPedido}

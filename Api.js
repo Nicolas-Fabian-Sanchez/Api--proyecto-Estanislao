@@ -1,6 +1,5 @@
 const express = require('express');// requiero la funcion expres
-const { pedidoMenu } = require('./controllers/pedidoMenu'); //importo el modulo pedidoMneu
-const { confirmacionPedido } = require('./controllers/confirmacionPedido');
+
 const cors = require('cors');
 const api = express();//la llamo y asigno una constante
 const port =  4001;
