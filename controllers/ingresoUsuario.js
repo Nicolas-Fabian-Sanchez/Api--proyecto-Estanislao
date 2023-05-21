@@ -5,10 +5,9 @@ const ingresoUsuario=(req,res)=>{
         nombre:"Beto",
         contraseña:"martu123"
     };
-    const nombre=req.body;
-    console.log(nombreUsuario[0].nombreUsuario)
+    const nombreUsuario=req.body;
     //console.log(nombreUsuario[0].nombreUsuario);
-    if(nombre[0].nombreUsuario === usuarioRegistrado.nombre && nombre[0].password === usuarioRegistrado.contraseña){
+    if(nombreUsuario[0].nombreUsuario === usuarioRegistrado.nombre && nombreUsuario[0].password === usuarioRegistrado.contraseña){
             console.log("usuario correcto, se puede generar el token")
           
             //generar el token para devolverlo y que pueda usarlo para cargar una pelicula

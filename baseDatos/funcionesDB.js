@@ -1,4 +1,5 @@
 const moldeMesas = require("./moldeInfo.js");
+const moldesEstanislao = require("./moldesEstanislao.js");
 const estanislao = require("./moldesEstanislao.js")
 
 const cargaMesa = async (mesa,pedido,totalPagar) => {
@@ -31,6 +32,13 @@ const traerPedido = async()=>{
     let pedidos = await moldeMesas.find()
     return pedidos
 }
-
-
-module.exports={cargaMesa,traerMenu,cargarPedido,eliminarMesa,traerPedido}
+const cargarMenu =async(tipo,variedad,presio)=>{
+    const nuevoMenu= new moldesEstanislao({
+        tipo:tipo,
+        variedad:variedad,
+        precio:precio
+    })
+    let resultadoMenu = await moldesEstanislao.collection.insertOne(nuevoMenu);
+    return resultadoMenu
+}
+module.exports={cargaMesa,traerMenu,cargarPedido,eliminarMesa,traerPedido,cargarMenu}
