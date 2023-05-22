@@ -1,4 +1,4 @@
-const jwt = require("jsonwebtoken");//rocordar instalar libreria
+const jwt = require("jsonwebtoken");//recordar instalar libreria
 
 const verificacionServicio = (req,res,next)=>{
     const authToken=req.headers.authorization;

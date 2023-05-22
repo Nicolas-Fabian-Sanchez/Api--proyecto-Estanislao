@@ -32,7 +32,7 @@ const traerPedido = async()=>{
     let pedidos = await moldeMesas.find()
     return pedidos
 }
-const cargarMenu =async(tipo,variedad,presio)=>{
+const cargarMenu =async(tipo,variedad,precio)=>{
     const nuevoMenu= new moldesEstanislao({
         tipo:tipo,
         variedad:variedad,

@@ -3,7 +3,7 @@
 const express = require("express");
 const router = express.Router();
 
-//------ requiero las funciones para los e,pleados----//
+//------ requiero las funciones para los empleados----//
 const{ingresoUsuario} = require("../controllers/ingresoUsuario.js");
 const{pedirPedido} =require("../controllers/pedidoMesas");          
 const{verificacionServicio}=require("../verificacionServicio/servicio");
@@ -16,7 +16,7 @@ const{pedidoMenu,pedirMenu} = require ("../controllers/pedidoMenu");
 //--------- empleados --------//
 router.post("/ingresoApp",ingresoUsuario);
 router.get("/traerPedido",pedirPedido); 
-router.post("/cargarMenu",verificacionServicio,nuevoMenu);
+router.post("/cargarMenu",nuevoMenu);
 
 //--------- cliente-----//
 router.post("/postmenu",pedidoMenu);//cliente manda mesa
