@@ -5,9 +5,9 @@ const router = express.Router();
 
 //------ requiero las funciones para los empleados----//
 const{ingresoUsuario} = require("../controllers/ingresoUsuario.js");
-const{pedirPedido} =require("../controllers/pedidoMesas");          
+const{pedirPedido,cerrarMesa} =require("../controllers/pedidoMesas");          
 const{verificacionServicio}=require("../verificacionServicio/servicio");
-const{nuevoMenu}=require("../controllers/cargarNuevoMenu");
+const{nuevoMenu,buscarMenuCambiar}=require("../controllers/cargarNuevoMenu");
 
 //------ requiero las funciones para el cliente -----//
 const{confirmacionPedido}= require("../controllers/confirmacionPedido")
@@ -16,7 +16,9 @@ const{pedidoMenu,pedirMenu} = require ("../controllers/pedidoMenu");
 //--------- empleados --------//
 router.post("/ingresoApp",ingresoUsuario);
 router.get("/traerPedido",pedirPedido); 
-router.post("/cargarMenu",nuevoMenu);
+router.delete("/eliminarMesa",cerrarMesa);
+router.post("/cargarMenu",verificacionServicio,nuevoMenu);
+router.get("/buscarMenu/:variedad",buscarMenuCambiar);
 
 //--------- cliente-----//
 router.post("/postmenu",pedidoMenu);//cliente manda mesa

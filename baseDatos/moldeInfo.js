@@ -8,13 +8,13 @@ let mesasMolde = new mongoose.Schema({
         require: true
     },
     pedido:{
-        type:String,
+        type:[],
     },
     totalPagar:{
-        type:Number
+        type:[]
     }
 
 })
 
-module.exports = mongoose.model("mesasocupadas",mesasMolde);
+module.exports = mongoose.model("mesasocupadas",mesasMolde,"mesasocupadas");
 

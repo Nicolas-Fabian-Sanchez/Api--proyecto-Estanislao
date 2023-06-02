@@ -14,7 +14,7 @@ const cargaMesa = async (mesa,pedido,totalPagar) => {
 };
 
 const traerMenu =async()=>{
-   let resultadoMenu = await estanislao.find();//error estanislao no esta definido
+   let resultadoMenu = await estanislao.find();
    return resultadoMenu
 };
 
@@ -41,4 +41,9 @@ const cargarMenu =async(tipo,variedad,precio)=>{
     let resultadoMenu = await moldesEstanislao.collection.insertOne(nuevoMenu);
     return resultadoMenu
 }
-module.exports={cargaMesa,traerMenu,cargarPedido,eliminarMesa,traerPedido,cargarMenu}
+
+const buscarMenu = async(variedad)=>{
+    let menuCambiar = await moldesEstanislao.findOne(variedad);
+    return menuCambiar
+}
+module.exports={cargaMesa,traerMenu,cargarPedido,eliminarMesa,traerPedido,cargarMenu,buscarMenu}

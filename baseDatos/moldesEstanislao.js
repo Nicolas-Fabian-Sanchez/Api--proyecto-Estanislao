@@ -12,4 +12,4 @@ let estanislao = new mongoose.Schema({
     }
 
 })
-module.exports = mongoose.model("estanislao",estanislao);
+module.exports = mongoose.model("estanislao",estanislao,"estanislao");
