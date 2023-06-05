@@ -8,9 +8,9 @@ const cargaMesa = async (mesa,pedido,totalPagar) => {
         pedido:pedido,
         totalPagar:totalPagar
     })
-    console.log(nuevaMesa);
-    let resultado = await moldeMesas.collection.insertOne(nuevaMesa);//no carga las mesas uaaaaa!!!!
-    return resultado
+    //console.log(nuevaMesa);
+    let resultadoMesa = await moldeMesas.collection.insertOne(nuevaMesa);//no carga las mesas uaaaaa!!!!
+    return resultadoMesa
 };
 
 const traerMenu =async()=>{
@@ -22,15 +22,16 @@ const cargarPedido = async(mesa,pedido)=>{
     let nuevoPedido=await moldeMesas.updateOne(mesa,{$set:pedido});
     return nuevoPedido
 }
-const eliminarMesa = async(mesa)=>{
-    let mesaEliminada = await moldeMesas.deleteOne(mesa);
-    return mesaEliminada
-}
+
 
 //-------- pide pedido para mostrar en el frond del servicio------//
 const traerPedido = async()=>{
     let pedidos = await moldeMesas.find()
     return pedidos
+}
+const eliminarMesa = async(mesa)=>{
+    let mesaEliminada = await moldeMesas.deleteOne(mesa);
+    return mesaEliminada
 }
 const cargarMenu =async(tipo,variedad,precio)=>{
     const nuevoMenu= new moldesEstanislao({
@@ -43,7 +44,11 @@ const cargarMenu =async(tipo,variedad,precio)=>{
 }
 
 const buscarMenu = async(variedad)=>{
-    let menuCambiar = await moldesEstanislao.findOne(variedad);
+    let menuCambiar = await estanislao.findOne(variedad);
     return menuCambiar
 }
-module.exports={cargaMesa,traerMenu,cargarPedido,eliminarMesa,traerPedido,cargarMenu,buscarMenu}
+const actualizarPrecio= async(filtro,precioActualizado)=>{
+    let resultado = await moldesEstanislao.updateOne(filtro,{$set:precioActualizado});
+    return resultado
+}
+module.exports={cargaMesa,traerMenu,cargarPedido,eliminarMesa,traerPedido,cargarMenu,buscarMenu,actualizarPrecio}

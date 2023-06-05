@@ -7,7 +7,7 @@ const pedirPedido = async(req,res)=>{
 const cerrarMesa = async(req,res)=>{
     let mesa = req.body
     let mesaEliminada= await eliminarMesa(mesa);
-    res.send(`la mesa ${mesa}  fue eliminada con exito`)
+    res.send(`la mesa ${mesaEliminada}  fue eliminada con exito`)
 }
 
 module.exports={pedirPedido,cerrarMesa}

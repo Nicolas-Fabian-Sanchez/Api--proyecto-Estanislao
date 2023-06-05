@@ -3,15 +3,15 @@ const jwt=require("jsonwebtoken");
 const ingresoUsuario=(req,res)=>{
     const usuarioAutorizado={
         nombre:"Beto",
-        contraseña:"martu123"
+        contrasenia:"martu123"
     };
     const usuarioRegistrado={
         nombre:"Martu",
-        contraseña: "beto123"
+        contrasenia: "beto123"
     }
-    const {nombre,contraseña} =req.body;
+    const {nombre,contrasenia} =req.body;
     //console.log(nombreUsuario[0].nombreUsuario);
-    if(nombre === usuarioAutorizado.nombre && contraseña === usuarioAutorizado.contraseña){
+    if(nombre === usuarioAutorizado.nombre && contrasenia === usuarioAutorizado.contrasenia){
             console.log("usuario correcto, se puede generar el token")
           
             //generar el token para devolverlo y que pueda usarlo para cargar una pelicula
@@ -23,9 +23,9 @@ const ingresoUsuario=(req,res)=>{
                 }
             })
        
-    }/*if(nombre === usuarioRegistrado.nombre && contraseña === usuarioRegistrado.contraseña ){
+    }else if(nombre === usuarioRegistrado.nombre && contrasenia === usuarioRegistrado.contrasenia ){
         res.send("usuario registrado")
-    }*/else{
+    }else{
         res.send("usuario no registrado")
     }
     
