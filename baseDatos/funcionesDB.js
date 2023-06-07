@@ -47,8 +47,8 @@ const buscarMenu = async(variedad)=>{
     let menuCambiar = await estanislao.findOne(variedad);
     return menuCambiar
 }
-const actualizarPrecio= async(filtro,precioActualizado)=>{
-    let resultado = await moldesEstanislao.updateOne(filtro,{$set:precioActualizado});
+const actualizarPrecio= async(filtro,precio)=>{
+    let resultado = await moldesEstanislao.updateOne(filtro,{$set:precio});
     return resultado
 }
 module.exports={cargaMesa,traerMenu,cargarPedido,eliminarMesa,traerPedido,cargarMenu,buscarMenu,actualizarPrecio}

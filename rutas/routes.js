@@ -3,7 +3,7 @@
 const express = require("express");
 const router = express.Router();
 
-//------ requiero las funciones para los empleados----//
+//------ requiero las funciones para el servicio----//
 const{ingresoUsuario} = require("../controllers/ingresoUsuario.js");
 const{pedirPedido,cerrarMesa} =require("../controllers/pedidoMesas");          
 const{verificacionServicio}=require("../verificacionServicio/servicio");
@@ -13,7 +13,7 @@ const{nuevoMenu,buscarMenuCambiar,cambiarPrecio}=require("../controllers/cargarN
 const{confirmacionPedido}= require("../controllers/confirmacionPedido")
 const{pedidoMenu,pedirMenu} = require ("../controllers/pedidoMenu");
 
-//--------- empleados --------//
+//--------- servicio --------//
 router.post("/ingresoApp",ingresoUsuario);
 router.get("/traerPedido",pedirPedido); 
 router.delete("/eliminarMesa",cerrarMesa);
