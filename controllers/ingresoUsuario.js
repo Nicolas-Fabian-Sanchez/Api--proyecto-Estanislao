@@ -24,9 +24,11 @@ const ingresoUsuario=(req,res)=>{
             })
        
     }else if(nombre === usuarioRegistrado.nombre && contrasenia === usuarioRegistrado.contrasenia ){
-        res.send("usuario registrado")
+        let respuesta1 =JSON.stringify("usuario resgitrado")
+        res.send(respuesta1)
     }else{
-        res.send("usuario no registrado")
+        let respuesta2=JSON.stringify("usuario no registrado")
+        res.send(respuesta2)
     }
     
 }
