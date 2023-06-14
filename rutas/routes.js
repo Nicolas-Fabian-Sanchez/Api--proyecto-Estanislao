@@ -18,8 +18,8 @@ router.post("/ingresoApp",ingresoUsuario);
 router.get("/traerPedido",pedirPedido); 
 router.delete("/eliminarMesa",cerrarMesa);
 router.post("/cargarMenu",nuevoMenu);
-router.get("/buscarMenu/:variedad",buscarMenuCambiar);
-router.put("/cambiarPrecio",cambiarPrecio)
+router.get("/buscarMenu/:variedad",verificacionServicio,buscarMenuCambiar);
+router.put("/cambiarPrecio",verificacionServicio,cambiarPrecio)
 
 //--------- cliente-----//
 router.post("/postmenu",pedidoMenu);//cliente manda mesa
