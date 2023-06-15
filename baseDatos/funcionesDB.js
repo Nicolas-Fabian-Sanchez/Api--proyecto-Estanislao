@@ -5,8 +5,8 @@ const estanislao = require("./moldesEstanislao.js")
 const cargaMesa = async (mesa,pedido,totalPagar) => {
     const nuevaMesa = new moldeMesas({
         mesa:mesa,
-        pedido:pedido,
-        totalPagar:totalPagar
+        pedido:[pedido],
+        totalPagar:[totalPagar]
     })
     //console.log(nuevaMesa);
     let resultadoMesa = await moldeMesas.collection.insertOne(nuevaMesa);//no carga las mesas uaaaaa!!!!

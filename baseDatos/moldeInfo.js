@@ -4,7 +4,7 @@ let mongoose = require("mongoose");
 
 let mesasMolde = new mongoose.Schema({
     mesa:{
-        type:Number,
+        type:String,
         require: true
     },
     pedido:{
