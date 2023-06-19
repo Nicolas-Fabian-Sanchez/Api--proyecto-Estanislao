@@ -18,7 +18,7 @@ router.post("/ingresoApp",ingresoUsuario);
 router.get("/traerPedido",pedirPedido); 
 router.delete("/eliminarMesa",cerrarMesa);
 router.post("/cargarMenu",nuevoMenu);
-router.get("/buscarMenu/:variedad",verificacionServicio,buscarMenuCambiar);
+router.get("/buscarMenu/:variedad",buscarMenuCambiar);
 router.put("/cambiarPrecio",verificacionServicio,cambiarPrecio)
 
 //--------- cliente-----//

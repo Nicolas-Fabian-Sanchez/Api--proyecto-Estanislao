@@ -3,7 +3,6 @@ let mongoose = require("mongoose");
 let mesasMolde = new mongoose.Schema({
     mesa:{
         type:Number,
-        
     },
     pedido:{
         type:[]
