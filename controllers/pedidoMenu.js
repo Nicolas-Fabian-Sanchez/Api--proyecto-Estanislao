@@ -4,10 +4,12 @@ const {cargaMesa,traerMenu}= require("../baseDatos/funcionesDB")
 
 const pedidoMenu=async(req,res)=>{ // mando los datos de la mesa y envio el menu (para esto transformo los el array en dato json)
        const mesa = req.body.mesa;
-       const pedido=[req.body.pedido];
-       const totalPagar=[req.body.totalPagar];
+       const pedido=req.body.pedido;
+       const totalPagar=req.body.totalPagar;
        let ingresarMesa = await cargaMesa({mesa,pedido,totalPagar});
        console.log(pedido)
+       console.log(mesa)
+       console.log(totalPagar)
        console.log(ingresarMesa)//para ver la mesa recivida en consola ,no tiene funcion
        //let envioMenu = JSON.stringify(menu)//asi modifico el array en json para enviarlo
        res.redirect("/menuCompleto");// esto lo hago para nose preguntar jajaja?
