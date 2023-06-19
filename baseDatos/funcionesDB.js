@@ -2,7 +2,7 @@ const moldeMesas = require("./moldeInfo.js");
 const moldesEstanislao = require("./moldesEstanislao.js");
 const estanislao = require("./moldesEstanislao.js")
 
-const cargaMesa = async (mesa,[pedido],[totalPagar]) => {
+const cargaMesa = async (mesa,pedido,totalPagar) => {
     const nuevaMesa = new moldeMesas({
         mesa:mesa,
         pedido:[pedido],
