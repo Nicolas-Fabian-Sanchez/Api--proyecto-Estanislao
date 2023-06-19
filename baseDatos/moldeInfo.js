@@ -1,5 +1,3 @@
-//aca creamos el molde de como queresmos que ingrese la info a la base de datos
-
 let mongoose = require("mongoose");
 
 let mesasMolde = new mongoose.Schema({
@@ -8,7 +6,7 @@ let mesasMolde = new mongoose.Schema({
         require: true
     },
     pedido:{
-        type:[],
+        type:[]
     },
     totalPagar:{
         type:[]
@@ -18,3 +16,4 @@ let mesasMolde = new mongoose.Schema({
 
 module.exports = mongoose.model("mesasocupadas",mesasMolde,"mesasocupadas");
 
+//aca creamos el molde de como queresmos que ingrese la info a la base de datos
