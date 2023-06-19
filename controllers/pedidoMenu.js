@@ -7,7 +7,9 @@ const pedidoMenu=async(req,res)=>{ // mando los datos de la mesa y envio el menu
        const pedido=req.body.pedido;
        const totalPagar=req.body.totalPagar;
        let ingresarMesa = await cargaMesa({mesa,pedido,totalPagar});
+       console.log(mesa)
        console.log(pedido)
+       console.log(totalPagar)
        console.log(ingresarMesa)//para ver la mesa recivida en consola ,no tiene funcion
        //let envioMenu = JSON.stringify(menu)//asi modifico el array en json para enviarlo
        res.redirect("/menuCompleto");// esto lo hago para nose preguntar jajaja?
