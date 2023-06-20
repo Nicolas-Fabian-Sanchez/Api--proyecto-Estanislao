@@ -6,7 +6,7 @@ const router = express.Router();
 //------ requiero las funciones para el servicio----//
 const{ingresoUsuario} = require("../controllers/ingresoUsuario.js");
 const{pedirPedido,cerrarMesa} =require("../controllers/pedidoMesas");          
-//const{verificacionServicio}=require("../verificacionServicio/servicio");
+const{verificacionServicio}=require("../verificacionServicio/servicio");
 const{nuevoMenu,buscarMenuCambiar,cambiarPrecio}=require("../controllers/cargarNuevoMenu");
 
 //------ requiero las funciones para el cliente -----//
@@ -18,7 +18,7 @@ router.post("/ingresoApp",ingresoUsuario);
 router.get("/traerPedido",pedirPedido); 
 router.delete("/eliminarMesa",cerrarMesa);
 router.post("/cargarMenu",nuevoMenu);
-router.get("/buscarMenu/:variedad",buscarMenuCambiar);
+router.get("/buscarMenu/:variedad",verificacionServicio,buscarMenuCambiar);
 router.put("/cambiarPrecio",cambiarPrecio)
 
 //--------- cliente-----//
